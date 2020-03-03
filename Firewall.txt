@@ -1,0 +1,19 @@
+sudo update
+sudo apt install apache2
+sudo ufw allow 'Apache'
+sudo systemctl status apache2
+sudo apt-get install proftpd
+sudo nano /etc/proftpd/proftpd.conf
+sudo apt-get install bind9
+nano /etc/bind/named.conf.local
+cd /etc/bind
+mkdir zones
+cd zones
+sudo nano jens.com.db
+sudo nano servermom.com.db
+sudo nano /etc/resolv.conf
+/etc/init.d/bind9 restart
+sudo ufw default deny outgoing
+sudo ufw allow 'ftp'
+sudo ufw allow 'http'
+sudo ufw allow 'https'
